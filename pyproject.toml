@@ -1,0 +1,22 @@
+[project]
+name = "african-games-api"
+version = "1.0.0"
+description = "A REST API cataloguing video games made by African studios."
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Savant. Adetayo Adeyemi", email = "dalchemysolutions@gmail.com" }]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 160
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["B008"]  # FastAPI's Depends()/Query() defaults are idiomatic
+
+[tool.ruff.lint.isort]
+known-first-party = ["app", "tests", "scripts"]
